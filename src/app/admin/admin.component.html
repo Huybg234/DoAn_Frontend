@@ -1,0 +1,37 @@
+<!--
+<div><h1>Đây là ADMIN</h1></div>
+<header></header>
+<nav>
+  <div id="menu">
+    <ul>
+      <li><a routerLink="./admin-home">Admin Home</a></li>
+      <li><a routerLink="admin-list">Admin List</a></li>
+      <li><a routerLink="profile">profile</a></li>
+      <li><a routerLink="recruitment">recruitment</a></li>
+      <li><a routerLink="contact">contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<footer></footer> -->
+<div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
+  <!--
+Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+Tip 2: you can also add an image using data-image tag
+-->
+  <div class="sidebar-wrapper">
+    <div class="logo">
+      <a routerLink="" class="simple-text"> ITSOL </a>
+    </div>
+    <ul class="nav">
+      <li *ngFor=" let menu of menus" class="nav-item cursor-pointer" [ngClass]="router.url === menu.path ? 'active' : ''">
+        <div (click)="gotoPage(menu)" class="nav-link">
+          <i [ngClass]="menu.icon"></i>
+          <p>{{menu.name}}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<router-outlet></router-outlet>
