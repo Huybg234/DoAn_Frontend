@@ -10,6 +10,7 @@ import { AdminComponent } from './admin.component';
 import { ProfileDetailComponent } from './profile/profile-detail/profile-detail.component';
 import { EditCompanyComponent } from './contact/edit-company/edit-company.component';
 import { FormsModule } from '@angular/forms';
+import {MatTableModule} from '@angular/material/table';
 
 const routes: Routes = [
   {
@@ -51,7 +52,7 @@ const routes: Routes = [
     ProfileDetailComponent,
     EditCompanyComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), FormsModule],
+  imports: [CommonModule, RouterModule.forChild(routes), FormsModule, MatTableModule],
   exports: [RouterModule],
 })
 export class AdminModule {}
